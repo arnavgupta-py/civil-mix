@@ -2,6 +2,8 @@
 
 An end-to-end Machine Learning web application designed to predict the 28-day compressive strength of concrete based on specific mix design parameters. 
 
+**Live Demo:** [https://civilmix.streamlit.app/](https://civilmix.streamlit.app/)
+
 ## Machine Learning Architecture & Methodology
 Due to the constraints of the provided dataset (n=111 observations), a highly rigorous small-data validation strategy was required to prevent model overfitting:
 * Validation: Implemented Repeated K-Fold Cross-Validation (5 splits, 3 repeats).
@@ -9,6 +11,8 @@ Due to the constraints of the provided dataset (n=111 observations), a highly ri
 * Selection: Lasso Regression (alpha=0.1) was selected as the optimal production model. Complex tree ensembles (XGBoost) and deep learning models (MLP) suffered from severe overfitting on the 111-row dataset, whereas the regularized linear approach generalized successfully.
 
 ## Repository Structure
+
+```text
 civil-mix/
 |-- assests/
 |   |-- infographics/
@@ -24,24 +28,33 @@ civil-mix/
 |-- train.py
 |-- requirements.txt
 |-- README.md
+```
 
 ## Installation & Usage (Standard Python)
 
 1. Clone the repository and navigate to the folder:
+```bash
 git clone https://github.com/arnavgupta-py/civil-mix.git
 cd civil-mix
+```
 
 2. Create a virtual environment (Recommended):
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
 3. Install the required dependencies:
+```bash
 pip install -r requirements.txt
+```
 
 4. Launch the application:
+```bash
 streamlit run main.py
+```
 
-The application will automatically open in your default web browser at http://localhost:8501.
+The application will automatically open in your default web browser at `http://localhost:8501`.
 
 ## Technology Stack
 * Frontend/Deployment: Streamlit
